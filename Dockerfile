@@ -3,8 +3,8 @@ FROM debian:buster-slim
 RUN apt-get  -y update \
     && rm -rf /var/lib/apt/lists/*
 
-# hadolint ignore=3008
-RUN apt-get  install nginx  -y --no-install-recommends \
+# hadolint ignore=DL3008
+RUN apt update && apt-get  install nginx  -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR  /opt
