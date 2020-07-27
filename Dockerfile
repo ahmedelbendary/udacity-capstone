@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
 
-Test hadolint checks
+#Test hadolint checks
 RUN apt-get  -y update \
     && rm -rf /var/lib/apt/lists/*
 
