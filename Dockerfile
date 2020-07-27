@@ -1,9 +1,12 @@
 FROM debian:buster-slim
 
-RUN apt-get  -y update 
+RUN apt-get  -y update \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get  install nginx -y
-
+# hadolint ignore=3008
+RUN apt-get  install nginx=1.18.0-1~xenial  -y --no-install-recommends \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR  /opt
 
 COPY index.html /var/www/html
