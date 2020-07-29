@@ -32,6 +32,12 @@ pipeline {
         }
     } 
 
+    stage('Security Scan') {
+      steps {
+        aquaMicroscanner(imageName: 'debian:buster-slim', notCompleted: 'exit 1', onDisallowed: 'fail')
+      }
+    }
+
 /*    stage('Upload to AWS') {
         steps {
          withAWS(region: 'us-west-2', credentials: 'capstone-creds') {
