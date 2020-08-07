@@ -24,7 +24,7 @@ pipeline {
     }     
 
 
-    stage('Build  Dockerfile ') {
+    stage('Build Dockerfile and push the Image') {
       steps {
         sh 'docker build -t nginx:bendo .'
         sh 'docker tag nginx:bendo ahmedbendo/nginx:bendo'
