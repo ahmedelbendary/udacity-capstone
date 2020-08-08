@@ -42,7 +42,7 @@ pipeline {
 
     stage('Security Scan02') {
       steps {
-        aquaMicroscanner(imageName: 'ahmedbendo/nginx:bendo', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
+        aquaMicroscanner(imageName: 'nginx:bendo', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
       }
     }
 
