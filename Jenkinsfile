@@ -46,6 +46,12 @@ pipeline {
     } 
 
 
+    stage('push the Image') {
+      steps {
+        sh 'ansible-playbook deployment.yml'
+        }
+    } 
+
 
 
   }
