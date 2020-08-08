@@ -34,7 +34,7 @@ pipeline {
 
     stage('Security Scan01') {
       steps {
-        aquaMicroscanner(imageName: 'ahmedbendo/nginx:bendo', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
+        aquaMicroscanner(imageName: 'debian:buster-slim', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
       }
     }
 
@@ -42,7 +42,7 @@ pipeline {
 
     stage('Security Scan02') {
       steps {
-        aquaMicroscanner(imageName: 'debian:buster-slim', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
+        aquaMicroscanner(imageName: 'ahmedbendo/nginx:bendo', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
       }
     }
 
