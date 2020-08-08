@@ -32,11 +32,11 @@ pipeline {
     } 
 
 
-    stage('Security Scan01') {
+  /*  stage('Security Scan01') {
       steps {
         aquaMicroscanner(imageName: 'debian:buster-slim', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html')
       }
-    }
+    }*/
 
 
 
